@@ -36,8 +36,7 @@ public class Pokemon {
         this.id = id;
     }
 
-    public Pokemon(Integer id, Integer pokedexNr, @NotNull String name, int amount) {
-        this.id = id;
+    public Pokemon(Integer pokedexNr, @NotNull String name, int amount) {
         this.pokedexNr = pokedexNr;
         this.name = name;
         this.normal = false;

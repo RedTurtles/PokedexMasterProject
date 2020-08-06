@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.management.relation.Role;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,7 +13,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class Player {
     //Fields
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Id
     @NotNull
@@ -22,12 +23,11 @@ public class Player {
     @NotNull
     private RoleType role;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Pokemon> pokemons;
+    private List<Pokemon> pokemons = new ArrayList<>();
 
     public Player(){}
 
-    public Player(Integer id, String username, String password, RoleType role, List<Pokemon> pokemons) {
-        this.id = id;
+    public Player(String username, String password, RoleType role, List<Pokemon> pokemons) {
         this.username = username;
         this.password = password;
         this.role = role;

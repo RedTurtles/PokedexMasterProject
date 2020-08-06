@@ -178,19 +178,19 @@ public class PlayerControllerApi {
         return call;
     }
     /**
-     * Build call for getContainerByIdUsingGET
-     * @param id Id for the player which want to get by Id. (required)
+     * Build call for getPlayerByNameUsingGET
+     * @param name Id for the player which want to get by name. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getContainerByIdUsingGETCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getPlayerByNameUsingGETCall(String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/api/players/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+        String localVarPath = "/api/players/{name}"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -228,13 +228,13 @@ public class PlayerControllerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getContainerByIdUsingGETValidateBeforeCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getContainerByIdUsingGET(Async)");
+    private com.squareup.okhttp.Call getPlayerByNameUsingGETValidateBeforeCall(String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling getPlayerByNameUsingGET(Async)");
         }
         
-        com.squareup.okhttp.Call call = getContainerByIdUsingGETCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPlayerByNameUsingGETCall(name, progressListener, progressRequestListener);
         return call;
 
         
@@ -244,39 +244,39 @@ public class PlayerControllerApi {
     }
 
     /**
-     * Get an specific player by Id
+     * Get an specific player by Id in this case is id &#x3D; name
      * 
-     * @param id Id for the player which want to get by Id. (required)
+     * @param name Id for the player which want to get by name. (required)
      * @return Player
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Player getContainerByIdUsingGET(Integer id) throws ApiException {
-        ApiResponse<Player> resp = getContainerByIdUsingGETWithHttpInfo(id);
+    public Player getPlayerByNameUsingGET(String name) throws ApiException {
+        ApiResponse<Player> resp = getPlayerByNameUsingGETWithHttpInfo(name);
         return resp.getData();
     }
 
     /**
-     * Get an specific player by Id
+     * Get an specific player by Id in this case is id &#x3D; name
      * 
-     * @param id Id for the player which want to get by Id. (required)
+     * @param name Id for the player which want to get by name. (required)
      * @return ApiResponse&lt;Player&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Player> getContainerByIdUsingGETWithHttpInfo(Integer id) throws ApiException {
-        com.squareup.okhttp.Call call = getContainerByIdUsingGETValidateBeforeCall(id, null, null);
+    public ApiResponse<Player> getPlayerByNameUsingGETWithHttpInfo(String name) throws ApiException {
+        com.squareup.okhttp.Call call = getPlayerByNameUsingGETValidateBeforeCall(name, null, null);
         Type localVarReturnType = new TypeToken<Player>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get an specific player by Id (asynchronously)
+     * Get an specific player by Id in this case is id &#x3D; name (asynchronously)
      * 
-     * @param id Id for the player which want to get by Id. (required)
+     * @param name Id for the player which want to get by name. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getContainerByIdUsingGETAsync(Integer id, final ApiCallback<Player> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPlayerByNameUsingGETAsync(String name, final ApiCallback<Player> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -297,7 +297,7 @@ public class PlayerControllerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getContainerByIdUsingGETValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPlayerByNameUsingGETValidateBeforeCall(name, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Player>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -421,18 +421,18 @@ public class PlayerControllerApi {
     /**
      * Build call for updatePlayerUsingPUT
      * @param body player (required)
-     * @param id Player information to be updated the existing Container by Id. (required)
+     * @param name Player information to be updated the existing Container by Id. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updatePlayerUsingPUTCall(Player body, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updatePlayerUsingPUTCall(Player body, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/api/players/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+        String localVarPath = "/api/players/{name}"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -470,17 +470,17 @@ public class PlayerControllerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updatePlayerUsingPUTValidateBeforeCall(Player body, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updatePlayerUsingPUTValidateBeforeCall(Player body, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling updatePlayerUsingPUT(Async)");
         }
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling updatePlayerUsingPUT(Async)");
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling updatePlayerUsingPUT(Async)");
         }
         
-        com.squareup.okhttp.Call call = updatePlayerUsingPUTCall(body, id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updatePlayerUsingPUTCall(body, name, progressListener, progressRequestListener);
         return call;
 
         
@@ -493,12 +493,12 @@ public class PlayerControllerApi {
      * Update an existing Player
      * 
      * @param body player (required)
-     * @param id Player information to be updated the existing Container by Id. (required)
+     * @param name Player information to be updated the existing Container by Id. (required)
      * @return Player
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Player updatePlayerUsingPUT(Player body, Integer id) throws ApiException {
-        ApiResponse<Player> resp = updatePlayerUsingPUTWithHttpInfo(body, id);
+    public Player updatePlayerUsingPUT(Player body, String name) throws ApiException {
+        ApiResponse<Player> resp = updatePlayerUsingPUTWithHttpInfo(body, name);
         return resp.getData();
     }
 
@@ -506,12 +506,12 @@ public class PlayerControllerApi {
      * Update an existing Player
      * 
      * @param body player (required)
-     * @param id Player information to be updated the existing Container by Id. (required)
+     * @param name Player information to be updated the existing Container by Id. (required)
      * @return ApiResponse&lt;Player&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Player> updatePlayerUsingPUTWithHttpInfo(Player body, Integer id) throws ApiException {
-        com.squareup.okhttp.Call call = updatePlayerUsingPUTValidateBeforeCall(body, id, null, null);
+    public ApiResponse<Player> updatePlayerUsingPUTWithHttpInfo(Player body, String name) throws ApiException {
+        com.squareup.okhttp.Call call = updatePlayerUsingPUTValidateBeforeCall(body, name, null, null);
         Type localVarReturnType = new TypeToken<Player>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -520,12 +520,12 @@ public class PlayerControllerApi {
      * Update an existing Player (asynchronously)
      * 
      * @param body player (required)
-     * @param id Player information to be updated the existing Container by Id. (required)
+     * @param name Player information to be updated the existing Container by Id. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updatePlayerUsingPUTAsync(Player body, Integer id, final ApiCallback<Player> callback) throws ApiException {
+    public com.squareup.okhttp.Call updatePlayerUsingPUTAsync(Player body, String name, final ApiCallback<Player> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -546,7 +546,7 @@ public class PlayerControllerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updatePlayerUsingPUTValidateBeforeCall(body, id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updatePlayerUsingPUTValidateBeforeCall(body, name, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Player>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

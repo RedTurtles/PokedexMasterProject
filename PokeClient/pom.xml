@@ -36,10 +36,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>de.containerservice</groupId>
-            <artifactId>swagger</artifactId>
-            <version>1.0.0</version>
-            <scope>test</scope>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
         </dependency>
     </dependencies>
     <build>

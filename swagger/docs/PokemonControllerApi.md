@@ -5,6 +5,7 @@ All URIs are relative to *//localhost:8080/*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPokemonsUsingGET**](PokemonControllerApi.md#getPokemonsUsingGET) | **GET** /api/pokemons | getPokemons
+[**getShinyPokemonsUsingGET**](PokemonControllerApi.md#getShinyPokemonsUsingGET) | **GET** /api/pokemons/shiny | getShinyPokemons
 [**newPokemonUsingPOST**](PokemonControllerApi.md#newPokemonUsingPOST) | **POST** /api/pokemons | newPokemon
 [**newPokemonUsingPUT**](PokemonControllerApi.md#newPokemonUsingPUT) | **PUT** /api/pokemons/{id} | newPokemon
 
@@ -27,6 +28,45 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PokemonControllerApi#getPokemonsUsingGET");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;Pokemon&gt;**](Pokemon.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getShinyPokemonsUsingGET"></a>
+# **getShinyPokemonsUsingGET**
+> List&lt;Pokemon&gt; getShinyPokemonsUsingGET()
+
+getShinyPokemons
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.PokemonControllerApi;
+
+
+PokemonControllerApi apiInstance = new PokemonControllerApi();
+try {
+    List<Pokemon> result = apiInstance.getShinyPokemonsUsingGET();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PokemonControllerApi#getShinyPokemonsUsingGET");
     e.printStackTrace();
 }
 ```

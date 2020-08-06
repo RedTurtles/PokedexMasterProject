@@ -22,6 +22,11 @@ public class PokemonController {
         return new ResponseEntity<>(pokemonService.getAllPokemons(), HttpStatus.OK);
     }
 
+    @RequestMapping(method = RequestMethod.GET,path = "/pokemons/shiny",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Pokemon>> getShinyPokemons(){
+        return new ResponseEntity<>(pokemonService.getAllShinyPokemons(), HttpStatus.OK);
+    }
+
     @RequestMapping(method = RequestMethod.POST,path = "/pokemons",produces = MediaType.APPLICATION_JSON_VALUE,consumes
             = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Pokemon> newPokemon(@RequestBody Pokemon pokemon){

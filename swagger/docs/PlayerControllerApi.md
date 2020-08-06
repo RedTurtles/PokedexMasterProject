@@ -5,9 +5,9 @@ All URIs are relative to *//localhost:8080/*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addPlayerUsingPOST**](PlayerControllerApi.md#addPlayerUsingPOST) | **POST** /api/players | add a new player
-[**getContainerByIdUsingGET**](PlayerControllerApi.md#getContainerByIdUsingGET) | **GET** /api/players/{id} | Get an specific player by Id
+[**getPlayerByNameUsingGET**](PlayerControllerApi.md#getPlayerByNameUsingGET) | **GET** /api/players/{name} | Get an specific player by Id in this case is id &#x3D; name
 [**getPlayersUsingGET**](PlayerControllerApi.md#getPlayersUsingGET) | **GET** /api/players | Get all Players
-[**updatePlayerUsingPUT**](PlayerControllerApi.md#updatePlayerUsingPUT) | **PUT** /api/players/{id} | Update an existing Player
+[**updatePlayerUsingPUT**](PlayerControllerApi.md#updatePlayerUsingPUT) | **PUT** /api/players/{name} | Update an existing Player
 
 <a name="addPlayerUsingPOST"></a>
 # **addPlayerUsingPOST**
@@ -52,11 +52,11 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getContainerByIdUsingGET"></a>
-# **getContainerByIdUsingGET**
-> Player getContainerByIdUsingGET(id)
+<a name="getPlayerByNameUsingGET"></a>
+# **getPlayerByNameUsingGET**
+> Player getPlayerByNameUsingGET(name)
 
-Get an specific player by Id
+Get an specific player by Id in this case is id &#x3D; name
 
 ### Example
 ```java
@@ -66,12 +66,12 @@ Get an specific player by Id
 
 
 PlayerControllerApi apiInstance = new PlayerControllerApi();
-Integer id = 56; // Integer | Id for the player which want to get by Id.
+String name = "name_example"; // String | Id for the player which want to get by name.
 try {
-    Player result = apiInstance.getContainerByIdUsingGET(id);
+    Player result = apiInstance.getPlayerByNameUsingGET(name);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PlayerControllerApi#getContainerByIdUsingGET");
+    System.err.println("Exception when calling PlayerControllerApi#getPlayerByNameUsingGET");
     e.printStackTrace();
 }
 ```
@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| Id for the player which want to get by Id. |
+ **name** | **String**| Id for the player which want to get by name. |
 
 ### Return type
 
@@ -136,7 +136,7 @@ No authorization required
 
 <a name="updatePlayerUsingPUT"></a>
 # **updatePlayerUsingPUT**
-> Player updatePlayerUsingPUT(body, id)
+> Player updatePlayerUsingPUT(body, name)
 
 Update an existing Player
 
@@ -149,9 +149,9 @@ Update an existing Player
 
 PlayerControllerApi apiInstance = new PlayerControllerApi();
 Player body = new Player(); // Player | player
-Integer id = 56; // Integer | Player information to be updated the existing Container by Id.
+String name = "name_example"; // String | Player information to be updated the existing Container by Id.
 try {
-    Player result = apiInstance.updatePlayerUsingPUT(body, id);
+    Player result = apiInstance.updatePlayerUsingPUT(body, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlayerControllerApi#updatePlayerUsingPUT");
@@ -164,7 +164,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Player**](Player.md)| player |
- **id** | **Integer**| Player information to be updated the existing Container by Id. |
+ **name** | **String**| Player information to be updated the existing Container by Id. |
 
 ### Return type
 

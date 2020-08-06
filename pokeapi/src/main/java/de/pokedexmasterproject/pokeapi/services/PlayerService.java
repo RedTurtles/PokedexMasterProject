@@ -50,6 +50,7 @@ public class PlayerService {
         util.updateProperty(updatePlayer::getUsername,currentPlayer::getUsername,currentPlayer::setUsername);
         util.updateProperty(updatePlayer::getPassword,currentPlayer::getPassword,currentPlayer::setPassword);
         util.updateProperty(updatePlayer::getRole,currentPlayer::getRole,currentPlayer::setRole);
+        util.updateProperty(updatePlayer::getPokemons,currentPlayer::getPokemons,currentPlayer::setPokemons);
 
         return playerRepo.save(currentPlayer);
     }

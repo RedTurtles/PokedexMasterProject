@@ -35,9 +35,9 @@ public class PlayerController {
             path = "/players/{name}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    @ApiOperation(value = "Get an specific player by Id", response = Player.class)
+    @ApiOperation(value = "Get an specific player by Id in this case is id = name", response = Player.class)
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Successfully request"), @ApiResponse(code = 404, message = "player not found"), @ApiResponse(code = 400, message = "Missing or invalid request body"), @ApiResponse(code = 500, message = "Internal error")})
-    public ResponseEntity<Player> getContainerById(@ApiParam("Id for the player which want to get by Id.") @PathVariable("name") String name) {
+    public ResponseEntity<Player> getPlayerByName(@ApiParam("Id for the player which want to get by name.") @PathVariable("name") String name) {
         return new ResponseEntity<>(playerService.getPlayerByName(name),HttpStatus.OK);
     }
 
@@ -63,6 +63,14 @@ public class PlayerController {
         return new ResponseEntity<>(playerService.updatePlayer(name,player), HttpStatus.CREATED);
     }
 
-
+    /*@RequestMapping(method = RequestMethod.GET,
+            path = "/players/pokemon/{name}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    @ApiOperation(value = "Get an specific player by Id in this case is id = name", response = Player.class)
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Successfully request"), @ApiResponse(code = 404, message = "player not found"), @ApiResponse(code = 400, message = "Missing or invalid request body"), @ApiResponse(code = 500, message = "Internal error")})
+    public ResponseEntity<Player> getPlayerByName(@ApiParam("Id for the player which want to get by name.") @PathVariable("name") String name) {
+        return new ResponseEntity<>(playerService.getPlayerByName(name),HttpStatus.OK);
+    }*/
 
 }

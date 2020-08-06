@@ -31,6 +31,12 @@ public class PokemonService {
         return pokemons;
     }
 
+    public List<Pokemon> getAllShinyPokemons() {
+        List<Pokemon> pokemons = pokemonRepo.findAllShinys();
+        logger.info("get {} shiny pokemons from repo", pokemons.size());
+        return pokemons;
+    }
+
     public Pokemon newPokemon(Pokemon pokemon) {
         logger.info("Pokemon with id:{} added.", pokemon.getId());
         return pokemonRepo.save(pokemon);
