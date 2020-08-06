@@ -1,0 +1,9 @@
+{
+    "allowUnicodeIdentifiers": true,
+    "hideGenerationTimestamp": true,
+    "generateModelTests": false,
+    "generateApiTests": false,
+    "groupId": "de.PokeDexMasterProject",
+    "artifactId": "PokeDexApi",
+    "dateLibrary": "java8"
+}

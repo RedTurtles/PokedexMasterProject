@@ -8,6 +8,7 @@ class PokeapiApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

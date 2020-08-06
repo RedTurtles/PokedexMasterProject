@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/PokeClient/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PokeClient/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pokeapi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/swagger/src/main/java" charset="UTF-8" />
   </component>
 </project>

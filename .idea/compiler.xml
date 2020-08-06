@@ -6,10 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="swagger (1) (de.containerservice)" />
         <module name="pokeapi" />
         <module name="PokeClient" />
+        <module name="PokeDexApi" />
+        <module name="swagger" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="swagger" target="1.8" />
+      <module name="swagger (1) (de.containerservice)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
